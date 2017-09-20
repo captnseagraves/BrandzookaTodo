@@ -20,7 +20,7 @@ const Todo = ({ onClick, completed, text, id }) => (
   >
     {text}
   </td>
-  <td><Delete id={id}/></td>
+  <td><Delete id={id} text={text}/></td>
 </tr>
 )
 

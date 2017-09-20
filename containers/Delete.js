@@ -2,11 +2,11 @@ import React, { PropTypes } from 'react'
 import { connect } from 'react-redux'
 import { deleteTodo } from '../actions'
 
-let Delete = ({ dispatch, id }) => {
+let Delete = ({ dispatch, id, text }) => {
 
   return (
     <button className="deleteBtn" onClick={ e => {
-      dispatch(deleteTodo(id))
+      dispatch(deleteTodo(id, text))
       }
     }>Delete Item</button>
   )

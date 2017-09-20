@@ -7,7 +7,7 @@ const todo = (state, action) => {
         completed: false
       }
     case 'TOGGLE_TODO':
-      if (state.id !== action.id) {
+      if (state.id + state.text !== action.id + action.text) {
         return state
       }
 
@@ -50,7 +50,6 @@ const todos = (state = [], action) => {
           localStorage.setItem('todos', JSON.stringify([]))
         }
       let savedData = JSON.parse(localStorage.getItem('todos'))
-      console.log(savedData);
       return savedData
     default:
       return state
