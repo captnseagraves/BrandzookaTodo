@@ -22,6 +22,7 @@ const todo = (state, action) => {
 const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
+
       let newStore = [
         ...state,
         todo(undefined, action)
@@ -33,21 +34,33 @@ const todos = (state = [], action) => {
         todo(t, action)
       )
     case 'DELETE_TODO':
-    let deleteStore = Object.assign([], state.filter(t => {
-      if (t.id !== action.id) {
-        console.log('t', t);
-        return true
+      let deleteStore = Object.assign([], state.filter(t => {
+        if (t.id !== action.id) {
+          return true
+          }
+          else {
+            return false
+          }
+        })
+      )
+      localStorage.setItem('todos', JSON.stringify(deleteStore))
+        return deleteStore
+    case 'GET_TODOS':
+        if (localStorage.getItem('todos') === null) {
+          localStorage.setItem('todos', JSON.stringify([]))
         }
-        else {
-        return false
-        }
-      })
-    )
-    localStorage.setItem('todos', JSON.stringify(deleteStore))
-    return deleteStore
+      let savedData = JSON.parse(localStorage.getItem('todos'))
+      console.log(savedData);
+      return savedData
     default:
       return state
   }
 }
+
+
+
+// let serial = localStorage.getItem('todos').length + 1
+//
+// id = serial++
 
 export default todos

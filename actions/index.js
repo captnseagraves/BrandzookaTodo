@@ -27,3 +27,9 @@ export const deleteTodo = (id) => {
     id
   }
 }
+
+export const getTodos = () => {
+  return {
+    type: 'GET_TODOS'
+  }
+}
