@@ -1,7 +1,6 @@
 const todo = (state, action) => {
   switch (action.type) {
     case 'ADD_TODO':
-    console.log(action.id, state);
       return {
         id: action.id,
         text: action.text,
@@ -23,26 +22,29 @@ const todo = (state, action) => {
 const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
-      return [
+      let newStore = [
         ...state,
         todo(undefined, action)
       ]
+      localStorage.setItem('todos', JSON.stringify(newStore))
+      return newStore
     case 'TOGGLE_TODO':
       return state.map(t =>
         todo(t, action)
       )
     case 'DELETE_TODO':
-    console.log('delete:', action.id, state);
-    return Object.assign([], state.filter(t => {
-      console.log('t', t, action.id);
+    let deleteStore = Object.assign([], state.filter(t => {
       if (t.id !== action.id) {
+        console.log('t', t);
         return true
         }
         else {
-          return false
+        return false
         }
       })
     )
+    localStorage.setItem('todos', JSON.stringify(deleteStore))
+    return deleteStore
     default:
       return state
   }
