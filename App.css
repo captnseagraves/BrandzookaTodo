@@ -1,3 +1,34 @@
-body {
-  color: yellow;
+ .container {
+  margin:auto;
+  text-align: center;
+  flex: auto;
+  width: 75%;
+}
+
+
+.header {
+  font-size: 4em;
+}
+
+table {
+  margin:auto;
+  text-align: center;
+  flex: auto;
+}
+
+.deleteBtn {
+  margin-left: 2em;
+}
+
+.submitBtn {
+  width: 25%;
+  margin-left: 1em;
+}
+
+.newInput {
+  width: 50%;
+}
+
+.submit {
+  margin-bottom: 2em;
 }

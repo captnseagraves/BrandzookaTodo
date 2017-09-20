@@ -1,6 +1,7 @@
 const todo = (state, action) => {
   switch (action.type) {
     case 'ADD_TODO':
+    console.log(action.id, state);
       return {
         id: action.id,
         text: action.text,
@@ -30,6 +31,18 @@ const todos = (state = [], action) => {
       return state.map(t =>
         todo(t, action)
       )
+    case 'DELETE_TODO':
+    console.log('delete:', action.id, state);
+    return Object.assign([], state.filter(t => {
+      console.log('t', t, action.id);
+      if (t.id !== action.id) {
+        return true
+        }
+        else {
+          return false
+        }
+      })
+    )
     default:
       return state
   }

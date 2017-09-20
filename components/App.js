@@ -4,7 +4,8 @@ import AddTodo from '../containers/AddTodo'
 import VisibleTodoList from '../containers/VisibleTodoList'
 
 const App = () => (
-  <div>
+  <div className='container'>
+    <h1 className='header'>Brandzooka Todo List</h1>
     <AddTodo />
     <VisibleTodoList />
     <Footer />
