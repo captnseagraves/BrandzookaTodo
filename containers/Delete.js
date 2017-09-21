@@ -8,7 +8,7 @@ let Delete = ({ dispatch, id, text }) => {
     <button className="deleteBtn" onClick={ e => {
       dispatch(deleteTodo(id, text))
       }
-    }>Delete Item</button>
+    }>X</button>
   )
 }
 

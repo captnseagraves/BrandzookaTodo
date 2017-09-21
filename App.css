@@ -1,3 +1,9 @@
+* {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: rgb(63,85,120);
+}
+
  .container {
   margin:auto;
   text-align: center;
@@ -8,6 +14,7 @@
 
 .header {
   font-size: 4em;
+  font-weight: 400;
 }
 
 table {
@@ -22,13 +29,19 @@ table {
 
 .submitBtn {
   width: 25%;
-  margin-left: 1em;
+  margin-top: 1em;
 }
 
 .newInput {
   width: 50%;
+  height: 2em;
+  text-align: center;
 }
 
 .submit {
   margin-bottom: 2em;
+}
+
+img {
+  width: 45%;
 }

@@ -17,7 +17,8 @@ let AddTodo = ({ dispatch }) => {
       }}>
         <input className="newInput"ref={node => {
           input = node
-        }} />
+        }} placeholder='Add a Task. Get it done.' />
+        <br></br>
         <button className="submitBtn" type="submit">
           Add Todo
         </button>
