@@ -1,8 +1,6 @@
 import expect from 'expect'
 import todos from '../../reducers/todos'
 
-let localStorage = {}
-
 
 describe('todos reducer', () => {
   it('should handle initial state', () => {
@@ -127,32 +125,6 @@ describe('todos reducer', () => {
         }
       ], {
         type: 'DELETE_TODO',
-        text: 'Run the tests',
-        id: 1
-      })
-    ).toEqual([
-      {
-        text: 'Use Redux',
-        completed: false,
-        id: 0
-      }
-    ])
-  })
-
-  it('should handle GET_TODOS', () => {
-    expect(
-      todos([
-        {
-          text: 'Run the tests',
-          completed: false,
-          id: 1
-        }, {
-          text: 'Use Redux',
-          completed: false,
-          id: 0
-        }
-      ], {
-        type: 'GET_TODOS',
         text: 'Run the tests',
         id: 1
       })

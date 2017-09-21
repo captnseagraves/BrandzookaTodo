@@ -31,9 +31,3 @@ export const deleteTodo = (id, text) => {
     text
   }
 }
-
-export const getTodos = () => {
-  return {
-    type: 'GET_TODOS'
-  }
-}

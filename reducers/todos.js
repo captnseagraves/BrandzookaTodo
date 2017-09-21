@@ -23,18 +23,16 @@ const todos = (state = [], action) => {
   switch (action.type) {
     case 'ADD_TODO':
 
-      let newStore = [
+      return [
         ...state,
         todo(undefined, action)
       ]
-
-      return newStore
     case 'TOGGLE_TODO':
       return state.map(t =>
         todo(t, action)
       )
     case 'DELETE_TODO':
-      let deleteStore = Object.assign([], state.filter(t => {
+      return Object.assign([], state.filter(t => {
         if (t.id !== action.id) {
           return true
           }
@@ -43,7 +41,6 @@ const todos = (state = [], action) => {
           }
         })
       )
-        return deleteStore
     default:
       return state
   }

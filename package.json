@@ -4,7 +4,7 @@
   "description": "Redux Todos example",
   "scripts": {
     "start": "nodemon server.js",
-    "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register --require ./test/setup.js --require jsdom-global --require mock-local-storage",
+    "test": "cross-env NODE_ENV=test mocha --recursive --compilers js:babel-register",
     "test:watch": "npm test -- --watch"
   },
   "repository": {
