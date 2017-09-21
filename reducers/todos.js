@@ -43,23 +43,10 @@ const todos = (state = [], action) => {
           }
         })
       )
-
         return deleteStore
-    // case 'GET_TODOS':
-    //     if (localStorage.getItem('todos') === null) {
-    //       localStorage.setItem('todos', JSON.stringify([{"id":0,"text":"Add something to my todo list","completed":false}]))
-    //     }
-    //   let savedData = JSON.parse(localStorage.getItem('todos'))
-    //   return savedData
     default:
       return state
   }
 }
-
-
-
-// let serial = localStorage.getItem('todos').length + 1
-//
-// id = serial++
 
 export default todos
