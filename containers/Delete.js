@@ -6,14 +6,14 @@ let Delete = ({ dispatch, id, text }) => {
 
   return (
     <button className="deleteBtn" onClick={ e => {
-      dispatch(deleteTodo(id, text))
+      dispatch(deleteTodo(id))
       }
     }>X</button>
   )
 }
 
 Delete.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
 }
 
 Delete = connect()(Delete)
