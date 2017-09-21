@@ -5,8 +5,7 @@ import VisibleTodoList from '../containers/VisibleTodoList'
 
 const App = () => (
   <div className="outerContainer">
-
-      <div className='container'>
+    <div className='container'>
         <h1 className='header'>
           <img src={'https://d1cy2e0vbrm1md.cloudfront.net/logos/brandzooka_logo_pink.png'}></img>
           <br></br>
@@ -15,8 +14,7 @@ const App = () => (
           <AddTodo />
           <VisibleTodoList />
           <Footer />
-      </div>
-  
+    </div>
   </div>
 )
 

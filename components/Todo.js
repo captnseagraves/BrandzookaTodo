@@ -11,17 +11,17 @@ const Todo = ({ onClick, completed, text, id }) => (
       }
       >
       </input></td>
-  <td
-    className="item"
-    onClick={onClick}
-    style={{
-      textDecoration: completed ? 'line-through' : 'none'
-    }}
-  >
+    <td
+      className="item"
+      onClick={onClick}
+      style={{
+        textDecoration: completed ? 'line-through' : 'none'
+      }}
+    >
     {text}
-  </td>
-  <td><Delete id={id} text={text}/></td>
-</tr>
+    </td>
+    <td><Delete id={id} text={text}/></td>
+  </tr>
 )
 
 Todo.propTypes = {
