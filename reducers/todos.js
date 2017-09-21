@@ -7,7 +7,7 @@ const todo = (state, action) => {
         completed: false
       }
     case 'TOGGLE_TODO':
-      if (state.id + state.text !== action.id + action.text) {
+      if (state.id !== action.id) {
         return state
       }
 
@@ -28,8 +28,6 @@ const todos = (state = [], action) => {
         todo(undefined, action)
       ]
 
-      localStorage.setItem('todos', JSON.stringify(newStore))
-
       return newStore
     case 'TOGGLE_TODO':
       return state.map(t =>
@@ -37,7 +35,7 @@ const todos = (state = [], action) => {
       )
     case 'DELETE_TODO':
       let deleteStore = Object.assign([], state.filter(t => {
-        if (t.id + t.text !== action.id + action.text) {
+        if (t.id !== action.id) {
           return true
           }
           else {
@@ -45,14 +43,14 @@ const todos = (state = [], action) => {
           }
         })
       )
-      localStorage.setItem('todos', JSON.stringify(deleteStore))
+
         return deleteStore
-    case 'GET_TODOS':
-        if (localStorage.getItem('todos') === null) {
-          localStorage.setItem('todos', JSON.stringify([{"id":0,"text":"Add something to my todo list","completed":false}]))
-        }
-      let savedData = JSON.parse(localStorage.getItem('todos'))
-      return savedData
+    // case 'GET_TODOS':
+    //     if (localStorage.getItem('todos') === null) {
+    //       localStorage.setItem('todos', JSON.stringify([{"id":0,"text":"Add something to my todo list","completed":false}]))
+    //     }
+    //   let savedData = JSON.parse(localStorage.getItem('todos'))
+    //   return savedData
     default:
       return state
   }
